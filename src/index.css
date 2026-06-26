@@ -1,0 +1,198 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HypurrScan Terminal Dark Design System */
+
+@layer base {
+  :root {
+    --radius: 0.25rem;
+
+    /* Light mode - clean professional */
+    --background: 220 20% 97%;
+    --foreground: 220 25% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+    --primary: 186 100% 50%;
+    --primary-foreground: 220 25% 5%;
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 25% 20%;
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 220 15% 88%;
+    --accent-foreground: 220 25% 20%;
+    --destructive: 348 90% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 85%;
+    --input: 220 15% 88%;
+    --ring: 186 100% 50%;
+    --success: 145 80% 42%;
+    --warning: 38 92% 50%;
+    --info: 186 100% 42%;
+    --chart-1: 186 100% 50%;
+    --chart-2: 145 80% 45%;
+    --chart-3: 348 90% 55%;
+    --chart-4: 262 83% 63%;
+    --chart-5: 38 92% 52%;
+    --sidebar-background: 220 20% 97%;
+    --sidebar-foreground: 220 25% 15%;
+    --sidebar-primary: 186 100% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 90%;
+    --sidebar-accent-foreground: 220 25% 15%;
+    --sidebar-border: 220 15% 85%;
+    --sidebar-ring: 186 100% 50%;
+
+    /* Semantic colors */
+    --positive: 145 80% 42%;
+    --positive-foreground: 0 0% 100%;
+    --negative: 348 90% 55%;
+    --negative-foreground: 0 0% 100%;
+    --cyan: 186 100% 50%;
+    --cyan-foreground: 220 25% 5%;
+  }
+
+  .dark {
+    /* Dark mode - terminal dark */
+    --background: 222 28% 7%;
+    --foreground: 213 25% 86%;
+    --card: 222 25% 10%;
+    --card-foreground: 213 25% 86%;
+    --popover: 222 28% 8%;
+    --popover-foreground: 213 25% 86%;
+    --primary: 186 100% 50%;
+    --primary-foreground: 222 28% 7%;
+    --secondary: 222 22% 15%;
+    --secondary-foreground: 213 25% 80%;
+    --muted: 222 22% 14%;
+    --muted-foreground: 213 15% 50%;
+    --accent: 222 22% 16%;
+    --accent-foreground: 213 25% 86%;
+    --destructive: 348 90% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 20% 18%;
+    --input: 222 22% 15%;
+    --ring: 186 100% 50%;
+    --success: 145 70% 48%;
+    --warning: 38 92% 52%;
+    --info: 186 100% 50%;
+    --chart-1: 186 100% 50%;
+    --chart-2: 145 70% 48%;
+    --chart-3: 348 90% 55%;
+    --chart-4: 262 83% 65%;
+    --chart-5: 38 92% 52%;
+    --sidebar-background: 222 30% 6%;
+    --sidebar-foreground: 213 20% 75%;
+    --sidebar-primary: 186 100% 50%;
+    --sidebar-primary-foreground: 222 28% 7%;
+    --sidebar-accent: 222 22% 12%;
+    --sidebar-accent-foreground: 213 20% 80%;
+    --sidebar-border: 222 20% 14%;
+    --sidebar-ring: 186 100% 50%;
+
+    /* Semantic colors */
+    --positive: 145 70% 48%;
+    --positive-foreground: 0 0% 100%;
+    --negative: 348 90% 55%;
+    --negative-foreground: 0 0% 100%;
+    --cyan: 186 100% 50%;
+    --cyan-foreground: 222 28% 7%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Monospace for data */
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  }
+}
+
+@layer utilities {
+  .positive {
+    color: hsl(var(--positive));
+  }
+  .negative {
+    color: hsl(var(--negative));
+  }
+  .bg-positive {
+    background-color: hsl(var(--positive));
+  }
+  .bg-negative {
+    background-color: hsl(var(--negative));
+  }
+  .text-cyan {
+    color: hsl(var(--cyan));
+  }
+  .bg-cyan {
+    background-color: hsl(var(--cyan));
+  }
+  .border-cyan {
+    border-color: hsl(var(--cyan));
+  }
+  .flash-positive {
+    animation: flash-green 0.2s ease-out;
+  }
+  .flash-negative {
+    animation: flash-red 0.2s ease-out;
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--cyan)), hsl(var(--positive)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes flash-green {
+  0% { background-color: hsl(145 70% 48% / 0.15); }
+  100% { background-color: transparent; }
+}
+
+@keyframes flash-red {
+  0% { background-color: hsl(348 90% 55% / 0.15); }
+  100% { background-color: transparent; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.live-dot {
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+/* Terminal panel style */
+.terminal-panel {
+  @apply bg-card border border-border rounded-sm;
+}
+
+/* Truncate address */
+.addr {
+  @apply font-mono text-xs;
+}
